@@ -54,7 +54,7 @@ export class MojangRestAPI {
 
     private static readonly TIMEOUT = 2500
 
-    public static readonly AUTH_ENDPOINT = 'https://authserver.mojang.com'
+    public static readonly AUTH_ENDPOINT = 'https://auth.lostkingdoms.fr/api/yggdrasil/authserver'
     public static readonly STATUS_ENDPOINT = 'https://status.mojang.com'
 
     private static authClient = got.extend({
