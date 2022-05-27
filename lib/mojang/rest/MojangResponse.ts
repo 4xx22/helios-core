@@ -24,77 +24,63 @@ export function mojangErrorDisplayable(errorCode: MojangErrorCode): DisplayableE
     switch(errorCode) {
         case MojangErrorCode.ERROR_METHOD_NOT_ALLOWED:
             return {
-                title: 'Internal Error:<br>Method Not Allowed',
-                desc: 'Method not allowed. Please report this error.'
-            }
+                title: 'Erreur interne : <br>Méthode non autorisée',
+                desc: 'Méthode non autorisée. Veuillez signaler cette erreur.'
+            };
         case MojangErrorCode.ERROR_NOT_FOUND:
             return {
-                title: 'Internal Error:<br>Not Found',
-                desc: 'The authentication endpoint was not found. Please report this issue.'
-            }
-        case MojangErrorCode.ERROR_USER_MIGRATED:
-            return {
-                title: 'Error During Login:<br>Account Migrated',
-                desc: 'You\'ve attempted to login with a migrated account. Try again using the account email as the username.'
-            }
+                title: 'Erreur interne : <br>Terminaison introuvable',
+                desc: "Le point de terminaison d'authentification n'a pas été trouvé. Veuillez signaler ce problème"
+            };
         case MojangErrorCode.ERROR_INVALID_CREDENTIALS:
             return {
-                title: 'Error During Login:<br>Invalid Credentials',
-                desc: 'The email or password you\'ve entered is incorrect. Please try again.'
-            }
+                title: 'Erreur lors de la connexion:<br>Login invalides',
+                desc: "L'e-mail ou le mot de passe que vous avez saisi est incorrect. Veuillez réessayer."
+            };
         case MojangErrorCode.ERROR_RATELIMIT:
             return {
-                title: 'Error During Login:<br>Too Many Attempts',
-                desc: 'There have been too many login attempts with this account recently. Please try again later.'
-            }
+                title: 'Erreur pendant la connexion : Trop de tentatives.',
+                desc: 'Il y a eu trop de tentatives de connexion avec ce compte récemment. Veuillez réessayer plus tard.'
+            };
         case MojangErrorCode.ERROR_INVALID_TOKEN:
             return {
-                title: 'Error During Login:<br>Invalid Token',
-                desc: 'The provided access token is invalid.'
-            }
+                title: 'Erreur pendant la connexion : Token invalide.',
+                desc: "Le token d'accès fourni n'est pas valide"
+            };
         case MojangErrorCode.ERROR_ACCESS_TOKEN_HAS_PROFILE:
             return {
                 title: 'Error During Login:<br>Token Has Profile',
                 desc: 'Access token already has a profile assigned. Selecting profiles is not implemented yet.'
-            }
+            };
         case MojangErrorCode.ERROR_CREDENTIALS_MISSING:
             return {
-                title: 'Error During Login:<br>Credentials Missing',
-                desc: 'Username/password was not submitted or password is less than 3 characters.'
-            }
+                title: 'Erreur lors de la connexion : <br>Login manquants',
+                desc: "Le nom d'utilisateur/mot de passe n'a pas été soumis ou le mot de passe comporte moins de 3 caractères."
+            };
         case MojangErrorCode.ERROR_INVALID_SALT_VERSION:
             return {
-                title: 'Error During Login:<br>Invalid Salt Version',
-                desc: 'Invalid salt version.'
-            }
+                title: 'Erreur lors de la connexion:<br>Invalid Salt Version',
+                desc: 'Version de salt invalide.'
+            };
         case MojangErrorCode.ERROR_UNSUPPORTED_MEDIA_TYPE:
             return {
-                title: 'Internal Error:<br>Unsupported Media Type',
-                desc: 'Unsupported media type. Please report this error.'
-            }
-        case MojangErrorCode.ERROR_GONE:
-            return {
-                title: 'Error During Login:<br>Account Migrated',
-                desc: 'Account has been migrated to a Microsoft account. Please log in with Microsoft.'
-            }
+                title: 'Erreur interne : <br>Type de média non supporté',
+                desc: 'Type de média non supporté. Veuillez signaler cette erreur.'
+            };
         case MojangErrorCode.ERROR_UNREACHABLE:
             return {
-                title: 'Error During Login:<br>Unreachable',
-                desc: 'Unable to reach the authentication servers. Ensure that they are online and you are connected to the internet.'
-            }
-        case MojangErrorCode.ERROR_NOT_PAID:
-            return {
-                title: 'Error During Login:<br>Game Not Purchased',
-                desc: 'The account you are trying to login with has not purchased a copy of Minecraft.<br>You may purchase a copy on <a href="https://minecraft.net/">Minecraft.net</a>'
-            }
+                title: 'Erreur lors de la connexion:<br>Inaccessible',
+                desc: "Impossible d'atteindre les serveurs d'authentification. Assurez-vous qu'ils sont en ligne et que vous êtes connecté à l'Internet."
+            };
         case MojangErrorCode.UNKNOWN:
             return {
-                title: 'Unknown Error During Login',
-                desc: 'An unknown error has occurred. Please see the console for details.'
-            }
+                title: 'Erreur inconnue pendant la connexion',
+                desc: "Une erreur inconnue s'est produite, merci de contacter un Administrateur."
+            };
         default:
-            throw new Error(`Unknown error code: ${errorCode}`)
+            throw new Error(`Unknown error code: ${errorCode}`);
     }
+
 }
 
 export interface MojangResponse<T> extends RestResponse<T> {
