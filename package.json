@@ -1,5 +1,5 @@
 {
-  "name": "helios-core",
+  "name": "@4xx22/helios-core",
   "version": "0.1.0",
   "description": "A library containing core mechanisms for Helios Launcher",
   "main": "dist/index.js",
@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dscalzi/helios-core.git"
+    "url": "git+https://github.com/4xx22/helios-core.git"
   },
   "keywords": [
     "helios-launcher",
